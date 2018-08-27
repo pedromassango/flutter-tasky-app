@@ -27,27 +27,51 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(children: <Widget>[
+      body: Center(
+        heightFactor: 10.0,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+              flex: 2,
+              child: Container( color: Colors.grey, height: 0.5,),
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: EdgeInsets.only(left: 10.0, right: 0.0),
+                child: Text(mTitle, style: new TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),)
+              )
+            ),
+            Expanded(
+              flex: 2,
+              child: Container( color: Colors.grey, height: 0.5,),
+            ),
+          ],
+        ),
+      ),
+        /*body: Cen(children: <Widget>[
           Expanded(
             child: Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Container(color:  Colors.amber,
-                  constraints: BoxConstraints.expand(width: 100.0, height: 10.0),
+                  constraints: BoxConstraints.expand( height: 10.0),
                 ),
-                Text(
-                    mTitle,
-                  style: TextStyle(fontSize: 24.0),
+                Expanded(
+                  flex: 2,
+                  child: Text(mTitle,
+                    style: TextStyle(fontSize: 24.0),
+                  ),
                 ),
                 Container(color:  Colors.amber,
-                  constraints: BoxConstraints.expand(width: 100.0, height: 10.0),
+                  constraints: BoxConstraints.expand(height: 10.0),
                 ),
               ],
             ),
           )
         ]
-        )
+        )*/
     );
   }
 }
