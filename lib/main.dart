@@ -28,7 +28,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        heightFactor: 10.0,
+        heightFactor: 7.0,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -39,7 +39,7 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(left: 10.0, right: 0.0),
+                padding: EdgeInsets.only(left: 10.0, right: 5.0),
                 child: Text(mTitle, style: new TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),)
               )
             ),
