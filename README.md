@@ -14,7 +14,7 @@ This an Flutter tasks project.
 <img src="/screenshots/tasks.gif" width="800" height="600">
 
 ## TODO
-[ ] Main UI
-[ ] Bottom Navigation
-[ ] Tasks Cards
-[ ] ... Anything else
+- [ ] Main UI
+- [ ] Bottom Navigation
+- [ ] Tasks Cards
+- [ ] ... Anything else
