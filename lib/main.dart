@@ -50,28 +50,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-        /*body: Cen(children: <Widget>[
-          Expanded(
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Container(color:  Colors.amber,
-                  constraints: BoxConstraints.expand( height: 10.0),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Text(mTitle,
-                    style: TextStyle(fontSize: 24.0),
-                  ),
-                ),
-                Container(color:  Colors.amber,
-                  constraints: BoxConstraints.expand(height: 10.0),
-                ),
-              ],
-            ),
-          )
-        ]
-        )*/
     );
   }
 }
