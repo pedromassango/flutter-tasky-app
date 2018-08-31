@@ -13,6 +13,11 @@ This an Flutter tasks project.
 
 <img src="/screenshots/tasks.gif" width="800" height="600">
 
+## What we reach
+
+
+<img src="/screenshots/gif1.gif" width="260" height="480">
+
 ## TODO
 - [ ] Main UI
 - [ ] Bottom Navigation
