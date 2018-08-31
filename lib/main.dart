@@ -15,6 +15,7 @@ class TaskyApp extends StatelessWidget {
         // All available pages
         '/new': (BuildContext context) => new NewTask()
       },
+      color: Colors.amber,
     );
   }
 }
@@ -36,10 +37,28 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        fixedColor: Colors.black,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+              icon: new Icon(Icons.home),
+              title: new Text("")
+          ),
+          BottomNavigationBarItem(
+              icon: new Icon(Icons.calendar_today),
+              title: new Text("")
+          ),
+          BottomNavigationBarItem(
+              icon: new Icon(Icons.playlist_add_check),
+              title: new Text("")
+          )
+        ],
+      ),
       body: new Column(
         children: <Widget>[
           Center(
-            heightFactor: 6.5,
+            heightFactor: 6.0,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -58,7 +77,7 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.bold),
                             ),
                             Text('Lists',
-                              style: new TextStyle(fontSize: 24.0,
+                              style: new TextStyle(fontSize: 22.0,
                                   color: Colors.grey),
                             )
                           ],
