@@ -16,7 +16,7 @@ This an Flutter tasks project.
 ## What we reach
 
 
-<img src="/screenshots/gif1.gif" width="260" height="480">
+<img src="/screenshots/home.png" width="260" height="480">
 
 ## TODO
 - [ ] Main UI
