@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(new TaskyApp());
 
-final mTitle = "Tasks List";
+final mTitle = "Tasks";
 
 class TaskyApp extends StatelessWidget {
   @override
@@ -39,8 +39,13 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: EdgeInsets.only(left: 10.0, right: 5.0),
-                child: Text(mTitle, style: new TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),)
+                padding: EdgeInsets.only(left: 5.0, right: 5.0),
+                child: new Row(
+                  children: <Widget>[
+                    Text('Tasks', style: new TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),),
+                    Text('Lists', style: new TextStyle(fontSize: 24.0, color: Colors.grey),)
+                  ],
+                )
               )
             ),
             Expanded(
