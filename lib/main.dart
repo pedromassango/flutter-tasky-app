@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'new_task.dart';
+import 'package:flutter_swiper/flutter_swiper.dart';
 
 void main() => runApp(new TaskyApp());
 
@@ -112,7 +113,7 @@ class _HomePageState extends State<HomePage> {
                 Text('Add List', style: TextStyle(color: Colors.grey))
               ],
             )
-          )
+          ),
         ],
       )
     );
