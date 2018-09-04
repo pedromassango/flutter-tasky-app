@@ -32,14 +32,23 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
 
+  /// Navigate to new task list
   void _addTaskPressed() => Navigator.of(context).pushNamed('/new');
+
+  /// Current bottom navigation index
+  int _currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        currentIndex: 0,
+        currentIndex: _currentIndex,
         fixedColor: Colors.black,
+        onTap: (int index){
+          setState(() {
+            _currentIndex = index;
+          });
+        },
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
               icon: new Icon(Icons.home),
