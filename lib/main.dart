@@ -44,10 +44,10 @@ class _HomePageState extends State<HomePage> {
 
   /// tasks list
   static final List<TasksListModel> tasksList = [
-    TasksListModel("Sunday Tasks", Colors.amber),
-    TasksListModel("Sunday Tasks", Colors.red),
-    TasksListModel("Sunday Tasks", Colors.indigo),
-    TasksListModel("Sunday Tasks", Colors.purple),
+    TasksListModel("Trip to Paris", Colors.amber),
+    TasksListModel("My Tasks", Colors.red),
+    TasksListModel("On Monday", Colors.indigo),
+    TasksListModel("Home work", Colors.purple),
   ];
 
   List<Widget> cardsFromTasks(){
