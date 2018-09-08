@@ -51,16 +51,6 @@ class _HomePageState extends State<HomePage> {
     TasksListModel("Learn Flutter", Colors.blue),
   ];
 
-  List<Widget> cardsFromTasks(){
-  List<Widget> _cards = new List();
-
-  tasksList.forEach((f){
-    _cards.add( TaskListCard(f));
-  });
-
-    return _cards;
-}
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -139,10 +129,12 @@ class _HomePageState extends State<HomePage> {
           Container(
             margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
             height: 300.0,
-            child: ListView(
-              scrollDirection: Axis.horizontal,
-              children: cardsFromTasks(),
-            ),
+            child: ListView.builder(itemBuilder: (c, i){
+              var item = tasksList.elementAt(i);
+              return new TaskListCard(item);
+            },
+            itemCount: tasksList.length,
+            scrollDirection: Axis.horizontal,)
           )
         ],
       )
