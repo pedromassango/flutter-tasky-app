@@ -136,8 +136,8 @@ class _HomePageState extends State<HomePage> {
             )
           ),
           Container(
-            margin: EdgeInsets.symmetric(vertical: 20.0),
-            height: 200.0,
+            margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
+            height: 300.0,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: cardsFromTasks(),
