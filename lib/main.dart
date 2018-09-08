@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'new_task.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
+import 'package:tasky/model/tasks_list_model.dart';
+import 'package:tasky/ui/tasks_list_card.dart';
+
 void main() => runApp(new TaskyApp());
 
 final mTitle = "Tasks";
@@ -38,6 +41,24 @@ class _HomePageState extends State<HomePage> {
 
   /// Current bottom navigation index
   int _currentIndex = 0;
+
+  /// tasks list
+  static final List<TasksListModel> tasksList = [
+    TasksListModel("Sunday Tasks", Colors.amber),
+    TasksListModel("Sunday Tasks", Colors.red),
+    TasksListModel("Sunday Tasks", Colors.indigo),
+    TasksListModel("Sunday Tasks", Colors.purple),
+  ];
+
+  List<Widget> cardsFromTasks(){
+  List<Widget> _cards = new List();
+
+  tasksList.forEach((f){
+    _cards.add( TaskListCard(f));
+  });
+
+    return _cards;
+}
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.bold),
                             ),
                             Text('Lists',
-                              style: new TextStyle(fontSize: 22.0,
+                              style: new TextStyle(fontSize: 20.0,
                                   color: Colors.grey),
                             )
                           ],
@@ -114,6 +135,14 @@ class _HomePageState extends State<HomePage> {
               ],
             )
           ),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20.0),
+            height: 200.0,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: cardsFromTasks(),
+            ),
+          )
         ],
       )
     );
