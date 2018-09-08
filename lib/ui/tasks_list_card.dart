@@ -3,7 +3,7 @@ import 'package:tasky/model/tasks_list_model.dart';
 
 class TaskListCard extends StatefulWidget{
 
-  final TasksList item;
+  final TasksListModel item;
 
   TaskListCard(this.item);
 
@@ -13,29 +13,34 @@ class TaskListCard extends StatefulWidget{
 
 class _TaskListCardState extends State<TaskListCard>{
 
-  final TasksList item;
+  final TasksListModel item;
 
   _TaskListCardState(this.item);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: new EdgeInsets.all(16.0),
+      width: 140.0,
+      height: 220.0,
+      margin: new EdgeInsets.only(left: 4.0, right: 4.0),
+      padding: const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 16.0, right: 8.0),
       decoration: new BoxDecoration(
-        borderRadius: BorderRadius.circular(16.0)
+        color: item.bgColor,
+        borderRadius: BorderRadius.circular(12.0)
       ),
       child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           new Text( item.name.toUpperCase(),
           style: new TextStyle(
-            fontSize: 18.0,
+            fontSize: 16.0,
             color: Colors.white,
             fontWeight: FontWeight.bold
           ),
           ),
           new Text("Tasks: 14",
           style: new TextStyle(
-            fontSize: 16.0,
+            fontSize: 14.0,
             color: Colors.grey
           ),)
         ],
