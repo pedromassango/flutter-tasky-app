@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class TasksList{
+class TasksListModel{
 
   final String name;
   final Color bgColor;
 
-  TasksList(this.name, this.bgColor);
+  TasksListModel(this.name, this.bgColor);
 
 }
