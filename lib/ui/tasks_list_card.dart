@@ -21,7 +21,7 @@ class _TaskListCardState extends State<TaskListCard>{
   Widget build(BuildContext context) {
     return Card(
       color: Colors.transparent,
-      elevation: 12.0,
+      elevation: 8.0,
       child:  Container(
         width: 160.0,
         height: double.maxFinite,
