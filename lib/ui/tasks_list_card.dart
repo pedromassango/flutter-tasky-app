@@ -21,9 +21,9 @@ class _TaskListCardState extends State<TaskListCard>{
   Widget build(BuildContext context) {
     return Container(
       width: 140.0,
-      height: 220.0,
+      height: double.maxFinite,
       margin: new EdgeInsets.only(left: 4.0, right: 4.0),
-      padding: const EdgeInsets.only(left: 8.0, top: 16.0, bottom: 16.0, right: 8.0),
+      padding: const EdgeInsets.only(left: 8.0, top: 32.0, bottom: 8.0, right: 8.0),
       decoration: new BoxDecoration(
         color: item.bgColor,
         borderRadius: BorderRadius.circular(12.0)
@@ -38,11 +38,14 @@ class _TaskListCardState extends State<TaskListCard>{
             fontWeight: FontWeight.bold
           ),
           ),
+          new Divider(color: Colors.grey,),
           new Text("Tasks: 14",
           style: new TextStyle(
             fontSize: 14.0,
             color: Colors.grey
-          ),)
+          ),
+          )
+          //TODO: show tasks of this list
         ],
       ),
     );
