@@ -20,7 +20,7 @@ class _TaskListCardState extends State<TaskListCard>{
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 140.0,
+      width: 160.0,
       height: double.maxFinite,
       margin: new EdgeInsets.only(left: 4.0, right: 4.0),
       padding: const EdgeInsets.only(left: 8.0, top: 32.0, bottom: 8.0, right: 8.0),
