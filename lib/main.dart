@@ -48,6 +48,7 @@ class _HomePageState extends State<HomePage> {
     TasksListModel("My Tasks", Colors.red),
     TasksListModel("On Monday", Colors.indigo),
     TasksListModel("Home work", Colors.purple),
+    TasksListModel("Learn Flutter", Colors.blue),
   ];
 
   List<Widget> cardsFromTasks(){
