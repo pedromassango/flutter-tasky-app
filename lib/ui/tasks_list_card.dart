@@ -19,7 +19,7 @@ class _TaskListCardState extends State<TaskListCard>{
       color: Colors.transparent,
       elevation: 8.0,
       child:  Container(
-        width: 160.0,
+        width: 164.0,
         height: double.maxFinite,
         margin: new EdgeInsets.only(left: 4.0, right: 4.0),
         padding: const EdgeInsets.only(left: 8.0, top: 32.0, bottom: 8.0, right: 8.0),
@@ -38,10 +38,11 @@ class _TaskListCardState extends State<TaskListCard>{
               ),
             ),
             Divider(color: Colors.grey,),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              //crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: widget.item.tasks.map((task){
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: widget.item.tasks.length,
+              itemBuilder: (c, i){
+                var task = widget.item.tasks.elementAt(i);
                 return Stack(
                   children: <Widget>[
                     Row(
@@ -64,8 +65,9 @@ class _TaskListCardState extends State<TaskListCard>{
                     ) : Container(),
                   ],
                 );
-              }).toList(),
-            )
+              },
+            ),
+
           ],
         ),
       ),
