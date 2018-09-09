@@ -40,16 +40,21 @@ class _TaskListCardState extends State<TaskListCard>{
             Divider(color: Colors.grey,),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: widget.item.tasks.map((task){
                 return Stack(
                   children: <Widget>[
-                    Text( task.name,
-                      style: TextStyle(
-                          fontSize: 14.0,
-                          color: task.done ? Colors.white.withOpacity(0.5) : Colors.white,
-                      ),
-                      softWrap: false,
+                    Row(
+                      children: <Widget>[
+                        Icon(Icons.check_box_outline_blank, size: 17.0, color: !task.done ? Colors.white.withOpacity(0.7) : Colors.transparent),
+                        Text( task.name,
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            color: task.done ? Colors.white.withOpacity(0.5) : Colors.white,
+                          ),
+                          softWrap: false,
+                        ),
+                      ],
                     ),
                     task.done ? Container(
                       width: double.infinity,
