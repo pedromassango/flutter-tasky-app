@@ -75,7 +75,6 @@ class _NewTaskPageState extends State<NewTaskPage>{
                       ),
                       style: TextStyle(fontSize: 22.0,
                       color: Colors.black,
-                        fontWeight: FontWeight.bold
                       ),
                     ),
                   ],
