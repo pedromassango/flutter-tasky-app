@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
 
   /// tasks list
   static final List<TasksListModel> tasksList = [
-    TasksListModel("Trip to Paris", Colors.amber, [
+    TasksListModel("Trip to Paris", Colors.indigo, [
       Task('Book Flight', true),
       Task('Passport check', true),
       Task('Packing luggage', false),
@@ -56,19 +56,19 @@ class _HomePageState extends State<HomePage> {
       Task('Publish friday blog post', true),
       Task('Run 3 miles', false),
     ]),
-    TasksListModel("On Monday", Colors.indigo, [
+    TasksListModel("On Monday", Colors.orange, [
       Task('Buy milk', false),
       Task('Plan weekend outing', true),
       Task('Wash clothes', true),
       Task('Update database', false),
     ]),
-    TasksListModel("Home work", Colors.purple, [
+    TasksListModel("Home work", Colors.blue, [
       Task('Study relativity thoery', true),
       Task('Read comics', false),
       Task('Spend minutes maditating', true),
       Task('Hit the books at 4pm', false),
     ]),
-    TasksListModel("Learn Flutter", Colors.blue, [
+    TasksListModel("Learn Flutter", Colors.purple, [
       Task('Buy milk', true),
       Task('Plan weekend outing', true),
       Task('Publish friday blog post', true),
