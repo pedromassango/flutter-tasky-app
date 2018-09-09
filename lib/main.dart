@@ -17,7 +17,7 @@ class TaskyApp extends StatelessWidget {
       home: HomePage(),
       routes: <String, WidgetBuilder>{
         // All available pages
-        '/new': (BuildContext context) => new NewTask()
+        '/new': (BuildContext context) => new NewTaskPage()
       },
       color: Colors.amber,
     );
