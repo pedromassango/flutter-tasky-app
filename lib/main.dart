@@ -17,7 +17,7 @@ class TaskyApp extends StatelessWidget {
       home: HomePage(),
       routes: <String, WidgetBuilder>{
         // All available pages
-        '/new': (BuildContext context) => new NewTask()
+        '/new': (BuildContext context) => new NewTaskPage()
       },
       color: Colors.amber,
     );
@@ -44,11 +44,36 @@ class _HomePageState extends State<HomePage> {
 
   /// tasks list
   static final List<TasksListModel> tasksList = [
-    TasksListModel("Trip to Paris", Colors.amber),
-    TasksListModel("My Tasks", Colors.red),
-    TasksListModel("On Monday", Colors.indigo),
-    TasksListModel("Home work", Colors.purple),
-    TasksListModel("Learn Flutter", Colors.blue),
+    TasksListModel("Trip to Paris", Colors.amber, [
+      Task('Book Flight', true),
+      Task('Passport check', true),
+      Task('Packing luggage', false),
+      Task('Hotel reservation', false),
+    ]),
+    TasksListModel("My Tasks", Colors.red, [
+      Task('Buy milk', false),
+      Task('Plan weekend outing', false),
+      Task('Publish friday blog post', true),
+      Task('Run 3 miles', false),
+    ]),
+    TasksListModel("On Monday", Colors.indigo, [
+      Task('Buy milk', false),
+      Task('Plan weekend outing', true),
+      Task('Wash clothes', true),
+      Task('Update database', false),
+    ]),
+    TasksListModel("Home work", Colors.purple, [
+      Task('Study relativity thoery', true),
+      Task('Read comics', false),
+      Task('Spend minutes maditating', true),
+      Task('Hit the books at 4pm', false),
+    ]),
+    TasksListModel("Learn Flutter", Colors.blue, [
+      Task('Buy milk', true),
+      Task('Plan weekend outing', true),
+      Task('Publish friday blog post', true),
+      Task('Run 3 miles', false),
+    ]),
   ];
 
   @override
@@ -113,23 +138,27 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Center(
-            heightFactor: 1.0,
-            child: new Column(
-              children: <Widget>[
-                new IconButton(
+          new Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(bottom: 4.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1.0, color: Colors.black45),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                child: new IconButton(
                   icon: new Icon(Icons.add),
                   onPressed: _addTaskPressed,
-                  iconSize: 30.0,
                 ),
-                Text('Add List', style: TextStyle(color: Colors.grey))
-              ],
-            )
+              ),
+              Text('Add List', style: TextStyle(color: Colors.grey))
+            ],
           ),
           Container(
             margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
             height: 300.0,
-            child: ListView.builder(itemBuilder: (c, i){
+            child: ListView.builder(
+              itemBuilder: (c, i){
               var item = tasksList.elementAt(i);
               return new TaskListCard(item);
             },
