@@ -138,18 +138,21 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          Center(
-            heightFactor: 1.0,
-            child: new Column(
-              children: <Widget>[
-                new IconButton(
+          new Column(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(bottom: 4.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 1.0, color: Colors.black45),
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                child: new IconButton(
                   icon: new Icon(Icons.add),
                   onPressed: _addTaskPressed,
-                  iconSize: 30.0,
                 ),
-                Text('Add List', style: TextStyle(color: Colors.grey))
-              ],
-            )
+              ),
+              Text('Add List', style: TextStyle(color: Colors.grey))
+            ],
           ),
           Container(
             margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
