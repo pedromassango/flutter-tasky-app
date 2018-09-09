@@ -8,14 +8,10 @@ class TaskListCard extends StatefulWidget{
   TaskListCard(this.item);
 
   @override
-  _TaskListCardState createState() => _TaskListCardState(item);
+  _TaskListCardState createState() => _TaskListCardState();
 }
 
 class _TaskListCardState extends State<TaskListCard>{
-
-  final TasksListModel item;
-
-  _TaskListCardState(this.item);
 
   @override
   Widget build(BuildContext context) {
@@ -28,27 +24,48 @@ class _TaskListCardState extends State<TaskListCard>{
         margin: new EdgeInsets.only(left: 4.0, right: 4.0),
         padding: const EdgeInsets.only(left: 8.0, top: 32.0, bottom: 8.0, right: 8.0),
         decoration: new BoxDecoration(
-            color: item.bgColor,
+            color: widget.item.bgColor,
             borderRadius: BorderRadius.circular(12.0)
         ),
         child: new Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Text( item.name.toUpperCase(),
-              style: new TextStyle(
+            Text( widget.item.name.toUpperCase(),
+              style: TextStyle(
                   fontSize: 16.0,
                   color: Colors.white,
                   fontWeight: FontWeight.bold
               ),
             ),
-            new Divider(color: Colors.grey,),
-            new Text("Tasks: 14",
-              style: new TextStyle(
-                  fontSize: 14.0,
-                  color: Colors.grey
-              ),
+            Divider(color: Colors.grey,),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: widget.item.tasks.map((task){
+                return Stack(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Icon(Icons.check_box_outline_blank, size: 17.0, color: !task.done ? Colors.white.withOpacity(0.7) : Colors.transparent),
+                        Text( task.name,
+                          style: TextStyle(
+                            fontSize: 14.0,
+                            color: task.done ? Colors.white.withOpacity(0.5) : Colors.white,
+                          ),
+                          softWrap: false,
+                        ),
+                      ],
+                    ),
+                    task.done ? Container(
+                      width: double.infinity,
+                      height: 1.0,
+                      color: task.done ? Colors.white.withOpacity(0.7) : Colors.white,
+                      margin: EdgeInsets.only(top: 8.0),
+                    ) : Container(),
+                  ],
+                );
+              }).toList(),
             )
-            //TODO: show tasks of this list
           ],
         ),
       ),
