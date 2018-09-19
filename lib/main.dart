@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
 
   /// Navigate to new task list
   void _addTaskPressed() => Navigator.of(context).pushNamed('/new');
+  PageController _pageController = PageController(viewportFraction: 0.5432);
 
   /// Current bottom navigation index
   int _currentIndex = 0;
@@ -75,6 +76,10 @@ class _HomePageState extends State<HomePage> {
       Task('Run 3 miles', false),
     ]),
   ];
+
+  void _openTask(){
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -154,16 +159,18 @@ class _HomePageState extends State<HomePage> {
               Text('Add List', style: TextStyle(color: Colors.grey))
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
-            height: 300.0,
-            child: ListView.builder(
-              itemBuilder: (c, i){
-              var item = tasksList.elementAt(i);
-              return new TaskListCard(item);
-            },
-            itemCount: tasksList.length,
-            scrollDirection: Axis.horizontal,)
+          GestureDetector(
+            onTap: _openTask,
+            child: Container(
+              margin: EdgeInsets.only(top: 32.0, bottom: 8.0),
+              height: 300.0,
+              child: PageView(
+                controller: _pageController,
+                children: tasksList.map((task){
+                  return TaskListCard(task);
+                }).toList(),
+              )
+            ),
           )
         ],
       )
